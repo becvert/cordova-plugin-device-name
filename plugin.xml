@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-device-name"
+    version="1.0.0">
+    <name>Device-Name</name>
+    <description>Cordova Device Name Plugin</description>
+    <author>Sylvain Brejeon</author>
+    <keywords>cordova,device,name</keywords>
+    <license>MIT</license>
+
+    <js-module src="www/device-name.js" name="DeviceName">
+        <clobbers target="cordova.plugins.deviceName" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target='AndroidManifest.xml' parent='/manifest'>
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+        </config-file>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DeviceName" >
+                <param name="android-package" value="net.becvert.cordova.DeviceName"/>
+            </feature>
+        </config-file>
+
+		<source-file src="src/android/net/becvert/cordova/DeviceName.java" target-dir="src/net/becvert/cordova" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DeviceName">
+                <param name="ios-package" value="CDVDeviceName"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CDVDeviceName.h" />
+        <source-file src="src/ios/CDVDeviceName.m" />
+    </platform>
+</plugin>
