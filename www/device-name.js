@@ -1,7 +1,7 @@
 /*
  * Cordova Device Name Plugin
  *
- * ZeroConf plugin for Cordova/Phonegap 
+ * Device Name plugin for Cordova/Phonegap 
  * by Sylvain Brejeon
  */
 
