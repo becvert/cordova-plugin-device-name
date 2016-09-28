@@ -8,13 +8,12 @@
     <author>Sylvain Brejeon</author>
     <keywords>cordova,device,name</keywords>
     <license>MIT</license>
-
-    <js-module src="www/device-name.js" name="DeviceName">
-        <clobbers target="cordova.plugins.deviceName" />
-    </js-module>
     
     <!-- android -->
     <platform name="android">
+        <js-module src="www/device-name.js" name="DeviceName">
+	    <clobbers target="cordova.plugins.deviceName" />
+	</js-module>
         <config-file target='AndroidManifest.xml' parent='/manifest'>
             <uses-permission android:name="android.permission.BLUETOOTH" />
         </config-file>
@@ -29,6 +28,9 @@
 
     <!-- ios -->
     <platform name="ios">
+	<js-module src="www/device-name.js" name="DeviceName">
+	    <clobbers target="cordova.plugins.deviceName" />
+	</js-module>
         <config-file target="config.xml" parent="/*">
             <feature name="DeviceName">
                 <param name="ios-package" value="CDVDeviceName"/>
