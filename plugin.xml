@@ -38,4 +38,11 @@
         <header-file src="src/ios/CDVDeviceName.h" />
         <source-file src="src/ios/CDVDeviceName.m" />
     </platform>
+
+    <!-- Windows universal apps (Windows 10, Windows 8.1, Windows Phone 8.1) -->
+    <platform name="windows">    
+        <js-module src="src/windows/DeviceNameProxy.js" name="DeviceNameProxy">
+            <runs />
+        </js-module>
+    </platform>
 </plugin>
