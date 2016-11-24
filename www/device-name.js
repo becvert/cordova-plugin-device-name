@@ -23,7 +23,7 @@ function DeviceName() {
             me.name = info.name;
             channel.onDeviceNameReady.fire();
         }, function(e) {
-            utils.alert("[ERROR] Error initializing Cordova: " + e);
+            utils.alert("[DeviceName] Error initializing Cordova: " + e);
         });
     });
 }
