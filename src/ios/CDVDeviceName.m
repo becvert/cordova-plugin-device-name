@@ -1,10 +1,3 @@
-/*
- * Cordova Device Name Plugin
- *
- * Device Name plugin for Cordova/Phonegap 
- * by Sylvain Brejeon
- */
-
 #import <Cordova/CDV.h>
 #import "CDVDeviceName.h"
 

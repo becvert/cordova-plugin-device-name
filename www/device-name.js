@@ -1,10 +1,3 @@
-/*
- * Cordova Device Name Plugin
- *
- * Device Name plugin for Cordova/Phonegap 
- * by Sylvain Brejeon
- */
-
 var argscheck = require('cordova/argscheck');
 var channel = require('cordova/channel');
 var utils = require('cordova/utils');

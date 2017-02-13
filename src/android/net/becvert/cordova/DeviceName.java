@@ -1,10 +1,3 @@
-/*
- * Cordova Device Name Plugin
- *
- * Device Name plugin for Cordova/Phonegap 
- * by Sylvain Brejeon
- */
-
 package net.becvert.cordova;
 
 import org.apache.cordova.CallbackContext;
