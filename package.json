@@ -1,11 +1,11 @@
 {
     "name" : "cordova-plugin-device-name", 
-    "version" : "1.1.0", 
+    "version" : "1.1.1", 
     "description" : "Cordova Device Name Plugin", 
     "cordova" : {
         "id" : "cordova-plugin-device-name", 
         "platforms" : [
-            "android", 
+            "android",
             "ios",
             "windows"
         ]
@@ -16,7 +16,7 @@
     }, 
     "keywords" : [
         "ecosystem:cordova",
-        "cordova-android", 
+        "cordova-android",  
         "cordova-windows", 
         "cordova-ios", 
         "cordova", 
@@ -28,6 +28,10 @@
         {
               "name": "Philipp Kursawe",
               "url": "https://github.com/pke"
+        },
+        {
+            "name": "Larry Bahr",
+            "url": "https://github.com/larrybahr"
         }
     ],
     "license" : "MIT", 
