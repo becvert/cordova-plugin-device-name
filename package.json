@@ -6,7 +6,6 @@
         "id" : "cordova-plugin-device-name", 
         "platforms" : [
             "android",
-            "browser",
             "ios",
             "windows"
         ]
@@ -17,8 +16,7 @@
     }, 
     "keywords" : [
         "ecosystem:cordova",
-        "cordova-android", 
-        "cordova-browser", 
+        "cordova-android",  
         "cordova-windows", 
         "cordova-ios", 
         "cordova", 
