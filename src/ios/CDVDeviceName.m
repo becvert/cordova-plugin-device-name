@@ -17,11 +17,10 @@
 - (NSDictionary*)deviceProperties
 {
     UIDevice* device = [UIDevice currentDevice];
-    NSMutableDictionary* devProps = [NSMutableDictionary dictionaryWithCapacity:4];
 
-    [devProps setObject:[device name] forKey:@"name"];
-    NSDictionary* devReturn = [NSDictionary dictionaryWithDictionary:devProps];
-    return devReturn;
+    return @{
+        @"name": [device name]
+    };
 }
 
 @end
