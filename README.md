@@ -17,7 +17,14 @@ cordova plugin add cordova-plugin-device-name
 
 ```javascript
 var deviceName = cordova.plugins.deviceName;
+
 console.log(deviceName.name) // e.g: Becvert's iPad
+
+deviceName.get(function success(name) {
+    console.log(name);
+}, function failure(error) {
+    console.log(error);
+});
 ```
 
 ## Credits
