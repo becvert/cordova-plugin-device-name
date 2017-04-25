@@ -10,9 +10,7 @@ module.exports = {
         }
 
         var info = new Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation();
-        return success({
-            name: info.friendlyName
-        });
+        return success(info.friendlyName);
     }
 };
 
