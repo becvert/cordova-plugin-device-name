@@ -14,6 +14,9 @@ function DeviceName() {
     channel.onCordovaReady.subscribe(function() {
         me.get(function(name) {
             me.name = name;
+            if (window.device && !window.device.name) {
+                window.device.name = name;
+            }
             channel.onDeviceNameReady.fire();
         }, function(e) {
             utils.alert("[DeviceName] Error initializing Cordova: " + e);
