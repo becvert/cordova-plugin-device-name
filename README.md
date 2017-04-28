@@ -27,6 +27,12 @@ deviceName.get(function success(name) {
 });
 ```
 
+if you installed cordova-plugin-device you can use:
+
+```javascript
+window.device.name
+```
+
 ## Credits
 
 All the credits go to the official cordova-plugin-device plugin.
