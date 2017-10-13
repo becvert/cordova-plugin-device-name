@@ -2,6 +2,8 @@
 
 This plugin allows you to get the user-friendly name of the device.
 
+On Android, a bluetooth adapter is required. Android emulator does not have bluetooth capabilities!
+
 [CHANGELOG](https://github.com/becvert/cordova-plugin-device-name/blob/master/CHANGELOG.md)
 
 ## Installation ##
