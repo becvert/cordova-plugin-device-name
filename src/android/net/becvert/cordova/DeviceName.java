@@ -15,11 +15,13 @@ public class DeviceName extends CordovaPlugin {
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
         if ("get".equals(action)) {
-            String name = this.getName();
-            if (name == null) {
-                callbackContext.error("could not retrieve the name of the device");
-            } else {
+            try {
+                String name = this.getName();
                 callbackContext.success(name);
+            } catch (Exception e) {
+                Log.e(TAG, e.getMessage(), e);
+                callbackContext.error(e.getMessage());
+                return false;
             }
         } else {
             return false;
@@ -29,14 +31,14 @@ public class DeviceName extends CordovaPlugin {
 
     public String getName() {
         String name = null;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            Log.d(TAG, "bluetooth_name");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             name = Settings.Secure.getString(cordova.getActivity().getContentResolver(), "bluetooth_name");
+            Log.d(TAG, "bluetooth_name " + name);
         } else {
             BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             if (mBluetoothAdapter != null) {
-                Log.d(TAG, "bluetooth adapter");
                 name = mBluetoothAdapter.getName();
+                Log.d(TAG, "bluetooth adapter " + name);
             }
         }
         return name;
