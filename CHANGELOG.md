@@ -1,5 +1,6 @@
-## [1.3.3] - 2018-04-03 
+## [1.3.3] - 2018-05-06 
 - [Android] using Global system settings with API 24+.
+- [Android] fixing duplicate declarations of bluetooth permission
 
 ## [1.3.2] - 2017-10-14
 - [Android] fixed the maxSdkVersion of permission android.permission.BLUETOOTH must be at least 18
