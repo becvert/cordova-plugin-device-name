@@ -24,6 +24,7 @@
             </feature>
         </config-file>
         <source-file src="src/android/net/becvert/cordova/DeviceName.java" target-dir="src/net/becvert/cordova" />
+        <hook type="after_prepare" src="merge-bluetooth-permission.js" />
     </platform>
 
     <!-- ios -->
