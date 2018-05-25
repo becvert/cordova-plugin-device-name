@@ -1,4 +1,4 @@
-## [1.3.3] - 2018-05-06 
+## [1.3.3] - 2018-05-24 
 - [Android] using Global system settings with API 24+.
 - [Android] fixing duplicate declarations of bluetooth permission
 
