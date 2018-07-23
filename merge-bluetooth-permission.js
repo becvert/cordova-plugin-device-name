@@ -22,7 +22,7 @@ module.exports = function(context) {
         if (bluetoothPermissions.length > 1) {
             var permissionWithoutMaxSDK = bluetoothPermissions.find(permission => permission.indexOf('android:maxSdkVersion') == -1);
             if (permissionWithoutMaxSDK) {
-                var result = data.replace('<uses-permission android:maxSdkVersion="18" android:name="android.permission.BLUETOOTH" />', '');
+                var result = data.replace(/<uses-permission android:maxSdkVersion="18" android:name="android\.permission\.BLUETOOTH"\s?\/>/, '');
                 fs.writeFile(file, result, 'utf8', function (err) {
                     if (err) {
                         throw new Error('Unable to write into AndroidManifest.xml: ' + err);
