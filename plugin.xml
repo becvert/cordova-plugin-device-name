@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-device-name"
-    version="1.3.4">
+    version="1.3.5">
 
     <name>Device-Name</name>
     <description>Cordova Device Name Plugin</description>
