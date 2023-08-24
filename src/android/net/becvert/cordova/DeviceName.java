@@ -36,18 +36,15 @@ public class DeviceName extends CordovaPlugin {
         String bluetoothName = null;
         String deviceName = null;
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        // set bluetoothName
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { // 31    
+            bluetoothName = Settings.Global.getString(mContext.contentResolver, Settings.Global.DEVICE_NAME)
+            name = bluetoothName;
+            Log.d(TAG, "bluetooth_name " + name);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { // 24
             bluetoothName = Settings.Secure.getString(cordova.getActivity().getContentResolver(), "bluetooth_name");
             name = bluetoothName;
             Log.d(TAG, "bluetooth_name " + name);
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                deviceName = Settings.Global.getString(cordova.getActivity().getContentResolver(), "device_name");
-                if (name == null) {
-                    name = deviceName;
-                }
-                Log.d(TAG, "device_name " + name);
-            }
         } else {
             BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             if (mBluetoothAdapter != null) {
@@ -55,6 +52,15 @@ public class DeviceName extends CordovaPlugin {
                 name = bluetoothName;
                 Log.d(TAG, "bluetooth adapter " + name);
             }
+        }
+
+        // set deviceName
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { // 24
+            deviceName = Settings.Global.getString(cordova.getActivity().getContentResolver(), "device_name");
+            if (name == null) {
+                name = deviceName;
+            }
+            Log.d(TAG, "device_name " + name);
         }
 
         JSONObject names = new JSONObject();
