@@ -38,7 +38,7 @@ public class DeviceName extends CordovaPlugin {
 
         // set bluetoothName
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { // 31    
-            bluetoothName = Settings.Global.getString(mContext.contentResolver, Settings.Global.DEVICE_NAME);
+            bluetoothName = Settings.Global.getString(cordova.getActivity().getContentResolver(), Settings.Global.DEVICE_NAME);
             name = bluetoothName;
             Log.d(TAG, "bluetooth_name " + name);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { // 24
