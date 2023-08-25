@@ -20,19 +20,40 @@ cordova plugin add cordova-plugin-device-name
 ```javascript
 var deviceName = cordova.plugins.deviceName;
 
-console.log(deviceName.name) // e.g: Becvert's iPad
+// on iOS
+console.log(deviceName.name) // e.g: "Becvert's iPad"
+console.log(deviceName.bluetoothName) // e.g: null
+console.log(deviceName.deviceName) // e.g: "Becvert's iPad"
 
-deviceName.get(function success(name) {
-    console.log(name);
+// on Android
+console.log(deviceName.name) // e.g: "HUAWEI P20 lite"
+console.log(deviceName.bluetoothName) // e.g: "HUAWEI P20 lite"
+console.log(deviceName.deviceName) // e.g: "ANE-LX1"
+
+deviceName.get(function success(names) {
+    console.log(names.name);
 }, function failure(error) {
     console.log(error);
 });
 ```
 
-if you installed cordova-plugin-device you can use:
+On Android, you'll get additional names you can choose from: `deviceName` and `bluetoothName`.
+`bluetoothName` is the user-defined name for the device which is often preferable to `deviceName`
+which is often just the model codename of the device.
+
+On Android, `name` defaults to `bluetoothName`, if available.
+
+If you installed cordova-plugin-device you can use:
 
 ```javascript
 window.device.name
+```
+
+You can access `deviceName` and `bluetoothName` from cordova-plugin-device on Android like this:
+
+```javascript
+window.device.otherNames.deviceName
+window.device.otherNames.bluetoothName
 ```
 
 ## Credits
